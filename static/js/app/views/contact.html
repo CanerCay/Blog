@@ -1,0 +1,130 @@
+<main id="main" class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="ad-home-top">
+
+            </div>
+        </div>
+    </div>
+    <section class="margin-top contact" id="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 animated zoomIn wow animated" data-wow-delay=".5s"
+                     style="text-align: center;visibility: visible; animation-delay: 0.5s; animation-name: zoomIn;">
+                    <div class="header-title">
+                        <h1>iletişim</h1>
+                        <p>
+                            {[{ globals.site_config.contact_title }]}
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xs-12">
+                    <div class="contact-inform">
+                        <h2>İletişim Bilgileri</h2>
+                    </div>
+                    <div class="contact-detial">
+                        <div class="clearfix ci-items fadeIn animated wow animated" data-wow-delay=".1s"
+                             style="visibility: visible; animation-delay: 0.1s; animation-name: fadeIn;">
+                            <span class="ci-icons"><i class="fa fa-home"></i></span>
+                            <address>{[{ about.address }]}</address>
+                        </div>
+
+                        <div class="clearfix ci-items fadeIn animated wow animated" data-wow-delay=".2s"
+                             style="visibility: visible; animation-delay: 0.2s; animation-name: fadeIn;">
+                            <span class="ci-icons"><i class="fa fa-envelope"></i></span>
+                            <address>{[{ about.email }]}</address>
+                        </div>
+
+                        <div class="clearfix ci-items fadeIn animated wow animated" data-wow-delay=".3s"
+                             style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                            <span class="ci-icons"><i class="fa fa-phone"></i></span>
+                            <address>{[{ about.phone }]}</address>
+                        </div>
+
+                        <div class="clearfix ci-items fadeIn animated wow animated" data-wow-delay=".4s"
+                             style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                            <span class="ci-icons"><i class="fa fa-globe"></i></span>
+                            <address>www.{[{ globals.site_config.site_url }]}</address>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-sm-6 col-lg-6 col-xs-12">
+                    <div class="section-form">
+                        <form role="form" class="contact-form" name="contactForm">
+                            <div class="form-group">
+                                <div class="col-sm-12 input-field fadeIn animated wow animated" data-wow-delay=".3s"
+                                     style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                                    <div class="input-field">
+                                        <input class="form-control input-box" ng-model="contact.name"
+                                               id="id_name" type="text" required
+                                               placeholder="İsim">
+
+                                        <span ng-show="contactForm.id_name.$error.required"> This is a required field</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12 input-field fadeIn animated wow animated" data-wow-delay=".3s"
+                                     style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                                    <div class="input-field">
+                                        <input class="form-control input-box" id="id_email"
+                                               type="text" ng-model="contact.email" required
+                                               placeholder="E-posta">
+
+                                        <div class="error" id="err-email" style="display:none">Please enter Email
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12 input-field fadeIn animated wow animated" data-wow-delay=".3s"
+                                     style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                                    <div class="input-field">
+                                        <input class="form-control input-box" id="id_subject"
+                                               type="text" ng-model="contact.subject" required
+                                                placeholder="Konu">
+
+                                        <div class="error" id="err-subject" style="display:none">Please enter subject
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="col-sm-12 input-field fadeIn animated wow animated" data-wow-delay=".4s"
+                                     style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                                    <div class="input-field textarea-input">
+                                        <textarea class="form-control materialize-textarea"
+                                                  ng-model="contact.message"
+                                                  id="id_message" placeholder="Mesaj" required></textarea>
+
+                                        <div class="error" id="err-message">Please enter
+                                            message
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                            <div class="input-field-send submit-wrap clearfix fadeIn animated wow animated"
+                                 data-wow-delay=".5s"
+                                 style="visibility: visible; animation-delay: 0.5s; animation-name: fadeIn;">
+                                <div id="ajaxsuccess">E-mail was successfully sent.</div>
+                                <div class="error" id="err-form">There was a problem validating
+                                    the form please check!
+                                </div>
+                                <div class="error" id="err-timedout">The connection to the server timed out!</div>
+                                <div class="error" id="err-state"></div>
+                                <button type="submit" id="send" ng-click="SendContact()"
+                                        class="left waves-effect waves-light btn-flat brand-text submit-btn">SEND
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div><!--End row -->
+        </div>
+    </section>
+</main>

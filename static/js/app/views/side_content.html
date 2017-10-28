@@ -1,0 +1,37 @@
+<div id="sidebar" class="col-gd-right sidebar hide-before-lg">
+    <div class="widget">
+        <h3 class="widget-title">Öne Çıkan Makaleler</h3>
+        <ul class="u-unstyled">
+            <li class="widget-post" ng-repeat="post in popularPosts">
+                <figure class="widget-post-image">
+                    <a href="{[{ post.api_url }]}"
+                       title="{[{ post.title }]}"
+                       class="image-link"
+                       style="background-image:url('{[{ post.image }]}'); "></a>
+                </figure>
+                <div class="widget-post-meta">
+                    <h3 class="title"><a
+                            href="{[{post.api_url }]}"
+                            title="{[{ post.title }]}">{[{ post.title }]}</a></h3>
+                </div>
+            </li>
+
+        </ul>
+
+    </div>
+    <div class="widget">
+        <h3 class="widget-title">Son eklenen Makaleler</h3>
+        <ul class="u-unstyled">
+            <li class="widget-post" ng-repeat="post in lastPosts">
+                <figure class="widget-post-image">
+                    <a href="{[{ post.api_url }]}" title="{[{ post.title }]}" class="image-link"
+                       style="background-image:url('{[{ post.image }]}') "></a>
+                </figure>
+                <div class="widget-post-meta">
+                    <h3 class="title"><a href="{[{ post.api_url }]}" title="{[{ post.title }]}">{[{ post.title }]}</a>
+                    </h3>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

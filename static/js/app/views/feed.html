@@ -1,0 +1,73 @@
+<section id="cover" class="cover vertiacal-aling full-height">
+    <div class="background animated fadeIn" style="background-image: url(/static/images/material-wallpaper.jpg)"></div>
+    <div class="vertiacal-aling-wrap">
+        <article class="cover-wrap vertiacal-aling-content" style="opacity: 1;">
+            <h1 id="title-home" class="cover-title animated bounceInDown">{[{ globals.site_config.site_name }]}</h1>
+
+            <p class="cover-description animated bounceIn"
+               ng-animate="{enter: 'animate-enter', leave: 'animate-leave'}">
+                {[{ globals.site_config.site_description }]}
+                <br/>
+                <small class="cover-tag">Elimden geldiğince..</small>
+            </p>
+
+        </article>
+    </div>
+    <a class="scrolltop mouse hide-before-md" ng-click="scrollTopAnimate()"><span class="scroll"></span></a>
+</section>
+<main id="main" class="container">
+    <div class="row">
+        <div class="col s12">
+            <div class="ad-home-top">
+
+            </div>
+        </div>
+    </div>
+    <section class="row layout-wrap layout-row " style="margin-top:2rem">
+        <div class="col-gd-left main-post">
+            <div id="entry" class="row">
+                <article class="col s12 entry-list" ng-repeat="post in posts">
+                    <div class="entries">
+                        <div class="row layout-wrap layout-row">
+                            <figure class="col-gd-post-image image">
+                                <a href="{[{ post.api_url }]}" class="image-link">
+                                    <img ng-src="{[{post.image}]}" class="hide-after-lg">
+                    <span class="entries-bg hide-before-lg"
+                          style="background-image:url({[{post.image}]})"></span>
+                                </a>
+                            </figure>
+                            <div class="col-gd-post-meta entries-meta">
+                                <div class="tag">
+                                    <a href="" ng-repeat="tag in post.tags_details">{[{tag.name}]} </a>
+                                </div>
+                                <h2 class="title"><a href="{[{ post.api_url }]}"
+                                                     title="{[{post.title}]}">{[{post.title}]}</a>
+                                </h2>
+
+                                <div class="meta-author-date">
+                                    <i class="i-chat"></i>
+                                    <i class="point">—</i>
+                                    <span class="author-name"><strong><a href="#/about/">{[{ post.author}]}</a></strong></span>
+                                    <i class="point">—</i>
+                                    <small>{[{post.created_on|timeago}]}</small>
+                                </div>
+
+                                <div class="entries-excerpt hide-before-lg"
+                                     ng-bind-html="post.description|truncate:250">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+            </div>
+
+
+            <div class="pagination" ng-show="showPagination">
+                <a ng-click="getNext()" id="pagination" class="pagination-link">Daha Fazla</a>
+            </div>
+        </div>
+        <side-content></side-content>
+    </section>
+
+</main>

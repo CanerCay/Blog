@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PublishConfigData" serverName="canercay.com">
+    <serverData>
+      <paths name="canercay.com">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/projects/Blog" local="$PROJECT_DIR$" web="/" />
+          </mappings>
+          <excludedPaths>
+            <excludedPath path="/projects/Blog/Blog.sock" />
+          </excludedPaths>
+        </serverdata>
+      </paths>
+    </serverData>
+  </component>
+</project>

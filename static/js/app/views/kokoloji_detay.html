@@ -1,0 +1,73 @@
+<main class="container">
+    <section class="row main-wrap layout-wrap layout-row margin-top">
+        <div class="col-gd-left">
+            <h3 class="title">Test Detayı</h3>
+        </div>
+
+        <div class="col s12">
+            <div class="col s12">
+                <div class="section-form">
+                    <form role="form" class="contact-form">
+                        <div class="form-group">
+                            <div class="col m12 fadeIn animated wow animated" data-wow-delay=".4s"
+                                 style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                                <div class="col m3">
+                                    <label>Avatar</label>
+                                </div>
+                                <div class="col m9 author">
+                                    <div class="avatar animated fadeIn"
+                                         style="background-image:url('{[{ question.avatar_url }]}')">
+                                    </div>
+                                    <input type="file" name="image" style="display: none" id="imgupload"
+                                           onchange="angular.element(this).scope().fileChanged(this.files)"/>
+                                    <button onclick="$('#imgupload').click();" class="btn btn-block">Resim Yükle
+                                    </button>
+                                    <input type="hidden" ng-model="question.avatar_id"
+                                           value="{[{ question.avatar_id }]}">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+
+                            <div class="col m12 fadeIn animated wow animated" data-wow-delay=".3s"
+                                 style="visibility: visible; animation-delay: 0.3s; animation-name: fadeIn;">
+                                <div class="col m3">
+                                    <label>Soru başlık</label>
+                                </div>
+                                <div class="col m9">
+                                    <input class="form-control input-box" ng-show="editing"
+                                           ng-model="question.title" type="text" required="required">
+                                    <p ng-hide="editing">{[{ question.title }]}</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col m12 fadeIn animated wow animated" data-wow-delay=".4s"
+                                 style="visibility: visible; animation-delay: 0.4s; animation-name: fadeIn;">
+                                <div class="col m3">
+                                    <label>Soru</label>
+                                </div>
+                                <div class="col m9">
+                                    <textarea class="form-control materialize-textarea" ng-show="editing"
+                                              ng-model="question.question" required="required"></textarea>
+                                    <p ng-hide="editing">{[{ question.question }]}</p>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <div class="col m12">
+                            <button ng-click="editing = !editing" ng-hide="editing"
+                                    class="left waves-effect waves-light btn-flat brand-text submit-btn">Düzenle
+                            </button>
+                            <button ng-show="editing" ng-click="updateQuestion()"
+                                    class="left waves-effect waves-light btn-flat brand-text submit-btn">Kaydet
+                            </button>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

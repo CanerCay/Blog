@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load i18n %}
+{% load static from staticfiles %}
+
+{% block extra_head %}
+    <meta name="keywords" content=""/>
+    <meta name="description" content=""/>
+
+    <script src="{% static 'js/app/controllers/app-controller.js' %}"></script>
+    <script src="{% static 'js/app/controllers/feed-controller.js' %}"></script>
+    <script src="{% static 'js/app/controllers/posts-controller.js' %}"></script>
+    <script src="{% static 'js/app/controllers/about-controller.js' %}"></script>
+    <script src="{% static 'js/app/controllers/contact-controller.js' %}"></script>
+
+    <script src="{% static 'js/app/services/app-service.js' %}"></script>
+    <script src="{% static 'js/app/services/posts-service.js' %}"></script>
+    <script src="{% static 'js/app/services/tags-service.js' %}"></script>
+    <script src="{% static 'js/app/services/about-service.js' %}"></script>
+    <script src="{% static 'js/app/services/contact-service.js' %}"></script>
+    <script src="{% static 'js/app/directives/directives.js' %}"></script>
+    <script src="{% static 'js/app/filters/filters.js' %}"></script>
+{% endblock %}
+
+
+{% block content %}
+    <ng-view view-state keep-scroll-pos></ng-view>
+{% endblock %}
+{% block extra_content %}
+
+{% endblock %}

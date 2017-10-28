@@ -1,0 +1,55 @@
+<main class="container">
+    <section class="row main-wrap layout-wrap layout-row margin-top">
+        <div class="col-gd-left">
+            <h3 class="title">Test Listesi</h3>
+        </div>
+
+        <div class="col s12">
+            <div class="col s12">
+                <form enctype="multipart/form-data">
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Resim</th>
+                            <th>Başlık</th>
+                            <th>Soru</th>
+                            <th>Oluşturulma Tarihi</th>
+                            <th>İşlem</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr ng-repeat="question in questions.results">
+                            <td class="author">
+                                <div class="avatar animated fadeIn"
+                                     style="background-image:url('{[{ question.avatar.image }]}')">
+                                </div>
+                            </td>
+                            <td>
+                                <small>
+                                    {[{ question.title }]}
+                                </small>
+                            </td>
+                            <td>
+                                <small>
+                                    {[{ question.question }]}
+                                </small>
+                            </td>
+                            <td>
+                                <small>
+                                    {[{ question.created|date:'longDate' }]}
+                                </small>
+                            </td>
+                            <td>
+                                <a class="btn btn-block btn-info" href="/#/kokoloji/{[{question.id}]}">Git</a>
+                                <button class="btn btn-block btn-danger" ng-click="deleteQuestion(question)">
+                                    Sil
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </form>
+            </div>
+        </div>
+    </section>
+</main>

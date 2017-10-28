@@ -1,0 +1,81 @@
+<main class="container">
+    <section class="row main-wrap layout-wrap layout-row margin-top">
+        <article class="col-gd-left post">
+            <div class="ad-post-header">
+            </div>
+            <h1 class="title">{[{ post.title }]}</h1>
+
+            <div class="post-byline">
+                <a class="post-authorAvatar hide-before-md" href="#/about"
+                   style="background-image:url('{[{ post.image }]}')"></a>
+                <span class="author-name">By <strong><a href="#/about">{[{post.author}]}</a></strong></span>
+                <i class="point">—</i>
+                <small>{[{post.created_on|timeago}]}</small>
+                <span>in</span>
+                <span class="tag" ng-repeat="tag in post.tags_details">
+                    <a href="">{[{tag.name}]}</a>
+                </span>
+            </div>
+            <figure class="post-image"><img
+                    src="{[{ post.image }]}"
+                    alt="{[{ post.title }]}" class="img-responsive"></figure>
+
+            <ul class="post-actions post-actions--top u-unstyled clear">
+                <li><a class="post-actions-comment scrolltop" href="#comments"><i class="i-chat"></i><span
+                        class="fb-comments-count fb_comments_count_zero"
+                        data-href="https://godofredo.ninja/blog/web-browser-mockups-psd/"
+                        ><span class="fb_comments_count">0</span></span></a></li>
+                <li class="post-actions-shares">
+                    <div class="post-actions-shares-count share-count"
+                         godo-url="https://godofredo.ninja/blog/web-browser-mockups-psd/">0
+                    </div>
+                    <div class="post-actions-shares-label">shares</div>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-circle-small share i-facebook bg-facebook"></a>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-circle-small share i-twitter bg-twitter"></a>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-circle-small share i-reddit bg-reddit"></a>
+                </li>
+                <li>
+                    <a href="#" class="btn btn-circle-small share i-linkedin bg-linkedin"></a>
+                </li>
+                <li class="hide-before-md">
+                    <a href="#" class="btn btn-circle-small share i-pinterest bg-pinterest"></a>
+                </li>
+                <li class="hide-before-md">
+                    <a href="#" class="btn btn-circle-small share i-pocket bg-pocket"></a>
+                </li>
+            </ul>
+            <div class="post-content" ng-bind-html="post.description">
+            </div>
+            <div id="related" class="related-posts hide-before-md">
+                <h2 class="related-posts-title">İLGİLİ MAKALELER</h2>
+
+                <div class="entries" ng-init="getRelatedPosts()">
+                    <div id="related-wrap" class="row layout-wrap layout-row">
+                        <div class="col m4 " ng-repeat="post in relatedPosts">
+                            <div class="related-posts-list">
+
+                                <figure class="image">
+                                    <a href="{[{ post.api_url }]}"
+                                       class="image-link">
+                                        <span class="entries-bg"
+                                              style="background-image:url('{[{ post.image }]}')"></span>
+                                    </a>
+                                </figure>
+                                <h2 class="title"><a
+                                        href="{[{ post.api_url }]}">{[{ post.title }]}</a></h2>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </article>
+        <side-content></side-content>
+    </section>
+</main>
